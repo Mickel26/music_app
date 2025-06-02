@@ -1,4 +1,4 @@
-import logo from '../assets/logo.png';
+import logo from '@/assets/images/logov2.png';
 
 export const images = {
     logo
