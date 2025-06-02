@@ -8,8 +8,8 @@ const TabIcon = ({ focused, icon, title }: any) => {
     if (focused) {
         return (
             <ImageBackground className='flex flex-col w-full flex-1 min-w-[112px] min-h-14 mt-6 justify-center items-center'>
-                <Image source={icon} className='size-7' tintColor="#622a81" />
-                <Text className='text-secondary text-base'>{title}</Text>
+                <Image source={icon} className='size-7' tintColor="#a85cd1" />
+                <Text className='text-primary text-base'>{title}</Text>
             </ImageBackground>
         )
     }
