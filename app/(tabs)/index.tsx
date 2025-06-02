@@ -1,11 +1,12 @@
-import { Text, View } from "react-native";
+import { ThemedScreen } from "@/components/ThemedScreen";
+import { Text } from "react-native";
 
 export default function Index() {
   return (
-    <View className="flex-1 justify-center items-center">
+    <ThemedScreen className="flex-1">
       <Text className="text-primary">
         Welcome
       </Text>
-    </View>
+    </ThemedScreen>
   );
 }

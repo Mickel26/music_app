@@ -1,11 +1,12 @@
-import React from 'react'
-import { Text, View } from 'react-native'
+import { ThemedScreen } from "@/components/ThemedScreen";
+import React from 'react';
+import { Text } from 'react-native';
 
 const saved = () => {
   return (
-    <View>
+    <ThemedScreen className="flex-1">
       <Text>saved</Text>
-    </View>
+    </ThemedScreen>
   )
 }
 

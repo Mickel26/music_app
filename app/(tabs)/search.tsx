@@ -1,11 +1,12 @@
-import React from 'react'
-import { Text, View } from 'react-native'
+import { ThemedScreen } from "@/components/ThemedScreen";
+import React from 'react';
+import { Text } from 'react-native';
 
 const search = () => {
   return (
-    <View>
+    <ThemedScreen className="flex-1">
       <Text>search</Text>
-    </View>
+    </ThemedScreen>
   )
 }
 

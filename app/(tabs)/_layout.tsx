@@ -1,7 +1,8 @@
-import { icons } from '@/constants/icons'
-import { Tabs } from 'expo-router'
-import React from 'react'
-import { Image, ImageBackground, Text, View } from 'react-native'
+import { icons } from '@/constants/icons';
+import { Tabs } from 'expo-router';
+import { useColorScheme } from 'nativewind';
+import React from 'react';
+import { Image, ImageBackground, Text, View } from 'react-native';
 
 const TabIcon = ({ focused, icon, title }: any) => {
     if (focused) {
@@ -22,19 +23,26 @@ const TabIcon = ({ focused, icon, title }: any) => {
 }
 
 const _layout = () => {
-    return (
-        <Tabs screenOptions={{
-            tabBarShowLabel: false,
-            tabBarItemStyle: {
-                width: '100%',
-                height: '100%',
-                justifyContent: 'center',
-                alignItems: 'center',
-            },
-            tabBarStyle: {
+    const { colorScheme } = useColorScheme();
+    const isDark = colorScheme === 'dark';
 
-            }
-        }}>
+    return (
+        <Tabs
+            screenOptions={{
+                tabBarShowLabel: false,
+                tabBarItemStyle: {
+                    width: '100%',
+                    height: '100%',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    backgroundColor: isDark ? '#0c0d0d' : '#f2f2f7',
+                },
+                tabBarStyle: {
+                    backgroundColor: isDark ? '#0c0d0d' : '#f2f2f7',
+                    borderTopWidth: 0,
+                },
+            }}
+        >
             <Tabs.Screen
                 name='index'
                 options={{
