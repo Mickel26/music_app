@@ -1,6 +1,7 @@
 import SearchBar from "@/components/SearchBar";
 import { ThemedScreen } from "@/components/ThemedScreen";
 import { images } from "@/constants/images";
+import '@/services/api';
 import { useRouter } from "expo-router";
 import { Image, ScrollView, View } from "react-native";
 
