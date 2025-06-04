@@ -22,6 +22,3 @@ export const fetchMusic = async ({ query }: { query: string }) => {
     const data = await response.json();
     return data.data;
 }
-
-// fetchMusic({ query: "" })
-//     .then(data => console.log(data))
