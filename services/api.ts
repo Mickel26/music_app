@@ -7,7 +7,7 @@ export const DEEZER_CONFIG = {
 
 export const fetchMusic = async ({ query }: { query: string }) => {
     const endpoint = query 
-    ? `${DEEZER_CONFIG.BASE_URL}/search?q=${encodeURIComponent(query)}` 
+    ? `${DEEZER_CONFIG.BASE_URL}/search/album?q=${encodeURIComponent(query)}` 
     : `${DEEZER_CONFIG.BASE_URL}/chart/0/albums`;
 
     const response = await fetch(endpoint, {
