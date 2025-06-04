@@ -34,7 +34,7 @@ export default function Index() {
                 placeholder="Search for music"
               />
               <>
-                <Text className="font-bold mt-5 ml-4 text-primary text-2xl">Latest music</Text>
+                <Text className="font-bold mt-5 ml-4 text-primary text-2xl">Popular albums</Text>
                 <FlatList
                   data={music}
                   renderItem={({ item }) => (
