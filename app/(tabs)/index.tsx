@@ -1,3 +1,4 @@
+import MusicCard from "@/components/MusicCard";
 import SearchBar from "@/components/SearchBar";
 import { ThemedScreen } from "@/components/ThemedScreen";
 import { images } from "@/constants/images";
@@ -27,19 +28,19 @@ export default function Index() {
           <Text>Error: {musicError?.message}</Text>
         ) : (
           <View>
-            <View className="flex-1 mt-5">
+            <View className="flex-1">
               <SearchBar
                 onPress={() => router.push("/search")}
                 placeholder="Search for music"
               />
               <>
-                <Text className="font-bold mt-7 ml-2 text-secondary text-2xl">Latest music</Text>
+                <Text className="font-bold mt-5 ml-4 text-primary text-2xl">Latest music</Text>
                 <FlatList
                   data={music}
                   renderItem={({ item }) => (
-                    <Text
-                      className="text-lg text-primary mt-2">{item.title}
-                    </Text>
+                    <MusicCard
+                      {...item}
+                    />
                   )}
                   keyExtractor={(item) => item.id.toString()}
                   numColumns={2}
@@ -49,7 +50,7 @@ export default function Index() {
                     paddingRight: 5,
                     marginBottom: 10,
                   }}
-                  className="mt-2 pb-32 ml-2"
+                  className="mt-4 pb-32 ml-2"
                   scrollEnabled={false}
                 />
               </>
