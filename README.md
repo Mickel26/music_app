@@ -7,7 +7,7 @@ A mobile music app built with **Expo** and **NativeWind** that fetches music inf
 - [Expo](https://expo.dev/)
 - [React Native](https://reactnative.dev/)
 - [NativeWind](https://www.nativewind.dev/) – Tailwind CSS for React Native
-- An API that will be added later
+- [Deezer API](https://developers.deezer.com/api)
 
 ## 🌍 Features
 
