@@ -18,7 +18,7 @@ export default function Index() {
   return (
     <ThemedScreen className="flex-1">
       <ScrollView className="flex-1 px-5" showsHorizontalScrollIndicator={false} contentContainerStyle={{ minHeight: '100%', paddingBottom: 10 }}>
-        <Image source={images.logo} className="size-36 mt-20 mx-auto" />
+        <Image source={images.logo} className="size-36 mt-20 mx-auto" resizeMode="cover"/>
         {musicLoading ? (
           <ActivityIndicator
             size="large"
@@ -30,6 +30,8 @@ export default function Index() {
           <View>
             <View className="flex-1">
               <SearchBar
+                value=""
+                onChangeText={() => {}}
                 onPress={() => router.push("/search")}
                 placeholder="Search for music"
               />
