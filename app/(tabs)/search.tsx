@@ -3,6 +3,7 @@ import SearchBar from "@/components/SearchBar";
 import { ThemedScreen } from "@/components/ThemedScreen";
 import { images } from "@/constants/images";
 import { fetchMusic } from "@/services/api";
+import { updateSearchCount } from "@/services/appwrite";
 import useFetch from "@/services/useFetch";
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, Image, Text, View } from 'react-native';
@@ -18,11 +19,16 @@ const search = () => {
     const timeoutId = setTimeout(async () => {
       if (searchQuery.trim()) {
         await loadMusic();
+
+        if(music?.length > 0 && music?.[0]) {
+          // Update search count in Appwrite
+          await updateSearchCount(searchQuery, music[0]);
+        }
       }
       else {
         reset();
       }
-    }, 250)
+    }, 500)
 
     return () => clearTimeout(timeoutId);
   }, [searchQuery]);

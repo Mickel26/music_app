@@ -7,7 +7,7 @@ interface Props {
     placeholder: string;
     value: string;
     onChangeText: (text: string) => void;
-    autoFocus?: boolean; // <-- add this
+    autoFocus?: boolean;
 }
 
 const SearchBar = ({onPress, placeholder, value, onChangeText, autoFocus} : Props) => {
@@ -27,7 +27,7 @@ const SearchBar = ({onPress, placeholder, value, onChangeText, autoFocus} : Prop
                 placeholderTextColor='#bb82db'
                 className='flex-1 ml-2 text-secondary'
                 textAlignVertical="center"
-                autoFocus={autoFocus} // <-- add this
+                autoFocus={autoFocus}
             />
         </View>
     )
