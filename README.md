@@ -21,7 +21,7 @@ A mobile music app built with **Expo** and **NativeWind** that fetches music inf
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/your-username/music_app.git
+git clone https://github.com/Mickel26/music_app.git
 cd music_app
 ```
 
