@@ -70,3 +70,17 @@ export interface Album {
     data: Track[];
   };
 }
+
+export interface TrendingAlbum {
+  $id: string;
+  searchTerm: string;
+  album_id: number;
+  title: string;
+  cover_url: string;
+  count: number;
+}
+
+export interface TrendingCardProps {
+  album: TrendingAlbum;
+  index: number;
+}

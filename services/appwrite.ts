@@ -1,4 +1,4 @@
-import { Album } from "@/interfaces/interfaces";
+import { Album, TrendingAlbum } from "@/interfaces/interfaces";
 import { Client, Databases, ID, Query } from "react-native-appwrite";
 
 const DATABASE_ID = process.env.EXPO_PUBLIC_APPWRITE_DATABASE_ID!;
@@ -46,3 +46,17 @@ export const updateSearchCount = async (query: string, album: Album) => {
     }
 }
 
+export const getTrendingAlbums = async (): Promise<TrendingAlbum[] | undefined> => {
+    try {
+        const result = await database.listDocuments(DATABASE_ID, COLLECTION_ID, [
+            Query.limit(5),
+            Query.orderDesc('count'),
+        ])
+
+        return result.documents as unknown as TrendingAlbum[];
+    }
+    catch (error) {
+        console.log('Error fetching trending albums:', error);
+        return undefined;
+    }
+}

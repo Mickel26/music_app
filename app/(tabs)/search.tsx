@@ -19,11 +19,6 @@ const search = () => {
     const timeoutId = setTimeout(async () => {
       if (searchQuery.trim()) {
         await loadMusic();
-
-        if(music?.length > 0 && music?.[0]) {
-          // Update search count in Appwrite
-          await updateSearchCount(searchQuery, music[0]);
-        }
       }
       else {
         reset();
@@ -32,6 +27,13 @@ const search = () => {
 
     return () => clearTimeout(timeoutId);
   }, [searchQuery]);
+
+  useEffect(() => {
+    if (music?.length > 0 && music?.[0]) {
+      // Update search count in Appwrite
+      updateSearchCount(searchQuery, music[0]);
+    }
+  }, [music]);
 
   return (
     <ThemedScreen className="flex-1">
