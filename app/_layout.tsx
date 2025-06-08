@@ -8,7 +8,7 @@ export default function RootLayout() {
       options={{ headerShown: false }}
     />
     <Stack.Screen
-      name="record/[id]"
+      name="records/[id]"
       options={{ headerShown: false }}
     />
   </Stack>;
