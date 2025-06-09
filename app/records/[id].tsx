@@ -1,15 +1,18 @@
 import { ThemedScreen } from '@/components/ThemedScreen';
+import { icons } from '@/constants/icons';
 import { fetchAlbumDetails } from '@/services/api';
 import useFetch from '@/services/useFetch';
-import { useLocalSearchParams } from 'expo-router';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 import React from 'react';
-import { Image, ScrollView, Text, View } from 'react-native';
-
+import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 
 
 const RecordDetails = () => {
   const { id } = useLocalSearchParams();
+  
   const { data: album, loading } = useFetch(() => fetchAlbumDetails(id as string));
+
+  const router = useRouter();
 
   return (
 
@@ -43,13 +46,16 @@ const RecordDetails = () => {
                 {ids < arr.length - 1 && ' ·'}
               </Text>
             ))}
-            </View>
+          </View>
           <Text className='text-secondary text-m mt-8'>
             Release Date: {album?.release_date ? new Date(album.release_date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) : ''}
           </Text>
         </View>
       </ScrollView>
-          
+      <TouchableOpacity className='absolute bottom-5 left-0 right-0 mx-5 bg-dark-100 rounded-lg py-3.5 flex flex-row items-center justify-center z-50' onPress={router.back}>
+        <Image source={icons.arrowLeft} className='size-5 mt-0.5'/>
+        <Text className='text-light font-semibold text-center mr-5'> Go back</Text>
+      </TouchableOpacity>
     </ThemedScreen>
   )
 }

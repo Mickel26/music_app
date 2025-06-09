@@ -1,3 +1,4 @@
+import arrowLeft from "@/assets/icons/arrow-left.png";
 import saved from "@/assets/icons/bookmarkIcon.png";
 import home from "@/assets/icons/homeIcon.png";
 import profile from "@/assets/icons/profileIcon.png";
@@ -7,5 +8,6 @@ export const icons = {
     saved,
     home,
     profile,
-    search
+    search,
+    arrowLeft,
 }
