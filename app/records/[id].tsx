@@ -15,7 +15,6 @@ const RecordDetails = () => {
   const router = useRouter();
 
   return (
-
     <ThemedScreen className='flex-1'>
       <ScrollView contentContainerStyle={{ paddingBottom: 80 }}>
         <View>
@@ -34,14 +33,14 @@ const RecordDetails = () => {
           </View>
           <View className='flex-row items-centerpx-2 py-1 gap-x-1 mt-2'>
             <Text className='text-light text-m'>by</Text>
-            <Text className='text-secondary text-m'>{album?.artist?.name}</Text>
-            <Text className='text-secondary text-m'>·</Text>
-            <Text className='text-secondary text-m'>{album?.label}</Text>
+            <Text className='text-light text-m'>{album?.artist?.name}</Text>
+            <Text className='text-light text-m'>·</Text>
+            <Text className='text-light text-m'>{album?.label}</Text>
           </View>
-          <Text className='text-secondary text-m mt-6'>Genres:</Text>
+          <Text className='text-primary text-m mt-6'>Genres:</Text>
           <View className='flex-row items-center gap-x-2 mt-3'>
             {album?.genres?.data.map((genre, ids, arr) => (
-              <Text key={genre.id} className='text-primary text-m'>
+              <Text key={genre.id} className='text-light text-m'>
                 {genre.name}
                 {ids < arr.length - 1 && ' ·'}
               </Text>
